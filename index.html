@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>دروس تفيدك</title>
-<meta name="description" content="دروس ومقاطع تقرّبك من الله وتصلح دينك ودنياك">
+<meta name="description" content="دروس ومقاطع تقرّبك من الله وتصلح دينك ودنياك بإذن الله">
 <meta property="og:title" content="دروس تفيدك">
-<meta property="og:description" content="دروس ومقاطع تقرّبك من الله وتصلح دينك ودنياك">
+<meta property="og:description" content="دروس ومقاطع تقرّبك من الله وتصلح دينك ودنياك بإذن الله">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@500;700;900&display=swap">
@@ -14,50 +14,56 @@
 /*
 VOICE: هادئ وقور قريب من الناس
 IDEA: باب واحد يجمع المواقع، كل موقع بطاقة بلونها
-COLOUR and TYPE: رملي دافئ وبني حبري مثل «أرِحنا بها»؛ أميري للعناوين وتجوال للنص
+COLOUR and TYPE: رملي دافئ وبني حبري مثل «أرِحنا بها»
+ أميري للعناوين فقط، وتجوال لكل ما عداها بثلاثة أحجام ثابتة
+ أيقونات مرسومة بعمق وإضاءة دافئة مثل باب صورة الحلقة
 */
 :root{color-scheme:light dark;
  --bg:light-dark(#F7EEDF,#1E1712);--bg2:light-dark(#EFE2CC,#2A2019);--card:light-dark(#FFFBF4,#2B211A);
- --ink:light-dark(#3B2416,#F3E6D3);--soft:light-dark(#7A5A44,#C9B39C);--line:light-dark(#E3D2B6,#3E3127)}
+ --ink:light-dark(#3B2416,#F3E6D3);--soft:light-dark(#7A5A44,#C9B39C);--line:light-dark(#E3D2B6,#3E3127);
+ --hl:light-dark(rgba(240,140,60,.34),rgba(240,140,60,.22))}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Tajawal,'Noto Naskh Arabic',sans-serif;overflow-x:clip}
-.wrap{width:100%;max-width:720px;margin:0 auto;padding:0 max(5vw,16px)}
+.wrap{width:100%;max-width:640px;margin:0 auto;padding:0 max(5vw,16px)}
 
 /* header */
-header{text-align:center;padding:clamp(36px,8vw,72px) 0 8px}
-.mark{width:64px;height:64px;margin:0 auto 6px;display:block;color:var(--soft)}
-h1{font:700 clamp(48px,13vw,84px)/1.35 Amiri,serif;margin:0}
-.sub{font-weight:700;font-size:clamp(18px,4.8vw,22px);line-height:1.9;margin:6px auto 0;max-width:22em;text-wrap:balance}
-.sub span{white-space:nowrap;padding:0 4px;background:linear-gradient(transparent 58%,rgba(224,102,58,.28) 58% 90%,transparent 90%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.rule{display:flex;align-items:center;justify-content:center;gap:10px;margin:26px auto 0;color:var(--line)}
+header{text-align:center;padding:clamp(36px,8vw,64px) 0 4px}
+.mark{width:60px;height:60px;margin:0 auto 4px;display:block;color:var(--soft)}
+h1{font:700 clamp(56px,15vw,88px)/1.3 Amiri,serif;margin:0}
+.sub{display:inline-block;font-weight:900;font-size:clamp(20px,5.4vw,26px);line-height:1.6;margin:8px 0 0;padding:0 6px;white-space:nowrap;background:linear-gradient(transparent 55%,var(--hl) 55% 92%,transparent 92%)}
+.tag{font:700 clamp(22px,6.4vw,30px)/1.6 Amiri,serif;white-space:nowrap;margin:2px 0 0;color:var(--soft)}
+.rule{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px auto 0;color:var(--line)}
 .rule i{height:1px;width:72px;background:currentColor}
-.rule svg{width:16px;height:16px;color:var(--soft);opacity:.7}
+.rule b{width:6px;height:6px;border-radius:50%;background:var(--soft);opacity:.6}
 
 /* cards */
-main{padding:22px 0 10px}
+main{padding:24px 0 8px}
 .sites{list-style:none;margin:0;padding:0;display:grid;gap:16px}
-.site{display:flex;align-items:stretch;gap:0;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-bottom:4px solid var(--c);border-radius:22px;overflow:hidden;box-shadow:0 10px 26px rgba(60,30,10,.08);transition:transform .2s,box-shadow .2s}
+.site{display:flex;align-items:stretch;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-bottom:4px solid var(--c);border-radius:22px;overflow:hidden;box-shadow:0 10px 26px rgba(60,30,10,.08);transition:transform .2s,box-shadow .2s}
 a.site:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(60,30,10,.14)}
 a.site:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.thumb{flex:none;width:112px;aspect-ratio:9/16;background:var(--c);position:relative}
+.thumb{flex:none;width:clamp(86px,25vw,104px);aspect-ratio:9/16;background:var(--c)}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.body{flex:1;padding:16px 16px 14px;display:flex;flex-direction:column;gap:6px}
+.body{flex:1;padding:14px clamp(12px,3.6vw,16px);display:flex;flex-direction:column;justify-content:center;gap:10px}
 .top{display:flex;align-items:center;gap:10px}
-.ico{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
-.ico svg{width:28px;height:28px}
-.site h2{font:700 clamp(28px,7.4vw,34px)/1.3 Amiri,serif;margin:0}
-.site p{margin:0;font-size:16.5px;line-height:1.65;color:var(--soft);font-weight:500}
-.go{margin-top:auto;padding-top:6px;display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:16px;color:var(--c)}
-.go svg{width:18px;height:18px}
-.site.soon{background:transparent;border:2px dashed var(--line);box-shadow:none;opacity:.75;--c:var(--soft)}
-.site.soon .body{padding:18px;flex-direction:row;align-items:center;gap:12px}
-.site.soon h2{font-size:clamp(22px,6vw,26px)}
+.ico{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 13%,var(--card))}
+.ico svg{width:44px;height:44px;display:block}
+.site h2{font:700 32px/1.25 Amiri,serif;margin:0}
+.lines{display:flex;flex-direction:column;gap:2px}
+.l1{font-weight:700;font-size:clamp(16px,4.6vw,18px);line-height:1.5;white-space:nowrap}
+.l2{font-weight:500;font-size:clamp(13.5px,3.85vw,15px);white-space:nowrap;line-height:1.5;color:var(--soft)}
+.go{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:15px;line-height:1;color:#fff;background:var(--c);border-radius:999px;padding:10px 16px 9px;min-height:40px}
+.go svg{width:16px;height:16px}
+.site.soon{background:transparent;border:2px dashed var(--line);box-shadow:none}
+.site.soon .body{padding:16px 18px;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px}
+.site.soon .ico{background:color-mix(in srgb,#E9A64B 12%,transparent)}
+.site.soon h2{font-size:26px;color:var(--soft)}
 
 /* footer */
-footer{text-align:center;padding:34px 16px 40px}
-.credit{font:700 30px/1.6 Amiri,serif;margin:0 auto;display:table;padding:0 6px;background:linear-gradient(90deg,light-dark(#C4512A,#F2A27A),light-dark(#C98A12,#F3CF72));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;-webkit-text-stroke:.6px light-dark(rgba(196,90,30,.55),rgba(243,190,110,.5))}
+footer{text-align:center;padding:36px 16px 44px}
+.credit{font:700 30px/1.6 Amiri,serif;margin:0 auto;display:table;padding:0 6px;background:linear-gradient(90deg,light-dark(#C4512A,#F2A27A),light-dark(#C98A12,#F3CF72));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 
 @media(prefers-reduced-motion:reduce){a.site{transition:none}a.site:hover{transform:none}}
 </style>
@@ -71,8 +77,9 @@ footer{text-align:center;padding:34px 16px 40px}
   <path d="M6 56h52"/>
  </svg>
  <h1>دروس تفيدك</h1>
- <p class="sub"><span>دروس ومقاطع تقرّبك من الله</span> <span>وتصلح دينك ودنياك</span></p>
- <div class="rule" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg><i></i></div>
+ <p class="sub">دروس ومقاطع تقرّبك من الله</p>
+ <p class="tag">وتصلح دينك ودنياك بإذن الله</p>
+ <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
 </header>
 
 <main>
@@ -86,25 +93,49 @@ footer{text-align:center;padding:34px 16px 40px}
 
 <script>
 /* لإضافة موقع جديد: سطر واحد في هذه المصفوفة
+   lines سطران: الأول عريض والثاني أصغر منه
    icon من الأيقونات في ICONS بالأسفل، وimg اختيارية */
 const SITES = [
- {title:"أرِحنا بها", desc:"سلسلة في أحكام الصلاة بالفيديو مع اختبار لكل حلقة", url:"https://hameed9507.github.io/arihna/", color:"#E0663A", icon:"prayer", img:"https://hameed9507.github.io/arihna/ep1.jpg"},
+ {title:"أرِحنا بها", lines:["سلسلة في أحكام الصلاة","بالفيديو مع اختبار لكل حلقة"], url:"https://hameed9507.github.io/arihna/", color:"#E0663A", icon:"mihrab", img:"https://hameed9507.github.io/arihna/ep1.jpg"},
 ];
 
+/* أيقونات مرسومة بإضاءة دافئة */
 const ICONS = {
- /* محراب وسجادة */
- prayer:'<path d="M6 21V11a6 6 0 0 1 12 0v10"/><path d="M9.5 21v-7a2.5 2.5 0 0 1 5 0v7"/><path d="M3 21h18"/>',
- /* ماء */
- water:'<path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.5 6-11z"/>',
- /* بيت */
- home:'<path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5h4v5"/>',
- /* كتاب */
- book:'<path d="M4 5c3-1.5 5.5-1.5 8 0v15c-2.5-1.5-5-1.5-8 0z"/><path d="M20 5c-3-1.5-5.5-1.5-8 0v15c2.5-1.5 5-1.5 8 0z"/>',
- /* ساعة رملية */
- soon:'<path d="M6 3h12M6 21h12"/><path d="M8 3v3c0 2.5 4 4 4 6s-4 3.5-4 6v3"/><path d="M16 3v3c0 2.5-4 4-4 6s4 3.5 4 6v3"/><path d="M10 19h4"/>'
+ /* محراب يخرج منه ضوء */
+ mihrab:`<defs>
+  <linearGradient id="mS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3D9A8"/><stop offset="1" stop-color="#D39A5B"/></linearGradient>
+  <radialGradient id="mG" cx=".5" cy=".85" r=".8"><stop offset="0" stop-color="#FFF6DC"/><stop offset=".45" stop-color="#F7BE6A"/><stop offset="1" stop-color="#C66A2B"/></radialGradient>
+  <radialGradient id="mF" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE3A6" stop-opacity=".9"/><stop offset="1" stop-color="#FFE3A6" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="24" cy="44" rx="17" ry="3.2" fill="url(#mF)"/>
+  <path d="M8 44V22C8 12.5 15.5 5.5 24 3c8.5 2.5 16 9.5 16 19v22z" fill="url(#mS)" stroke="#9A6236" stroke-width=".9"/>
+  <path d="M15 44V25.5C15 18.5 19 13.5 24 11c5 2.5 9 7.5 9 14.5V44z" fill="url(#mG)" stroke="#9A6236" stroke-width=".7"/>
+  <path d="M24 13.5v4" stroke="#8A5530" stroke-width=".8"/>
+  <path d="M22 17.5h4l-.6 3.6h-2.8z" fill="#8A5530"/>
+  <circle cx="24" cy="22.4" r="1.5" fill="#FFF8E4"/>
+  <rect x="5" y="43" width="38" height="2.8" rx="1.2" fill="#8A5530"/>`,
+ /* فانوس مضيء */
+ lantern:`<defs>
+  <radialGradient id="lH" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD48A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD48A" stop-opacity="0"/></radialGradient>
+  <radialGradient id="lG" cx=".5" cy=".6" r=".7"><stop offset="0" stop-color="#FFF4D2"/><stop offset=".5" stop-color="#F6B862"/><stop offset="1" stop-color="#D27F31"/></radialGradient>
+  <linearGradient id="lM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98A4B"/><stop offset="1" stop-color="#8A5530"/></linearGradient></defs>
+  <circle cx="24" cy="25" r="20" fill="url(#lH)"/>
+  <circle cx="24" cy="4.6" r="2.2" fill="none" stroke="#8A5530" stroke-width="1.2"/>
+  <path d="M16.5 12.5L24 6.8l7.5 5.7z" fill="url(#lM)"/>
+  <rect x="15.5" y="12.3" width="17" height="3.2" rx="1" fill="#8A5530"/>
+  <path d="M17 15.5h14l2 18.5H15z" fill="url(#lG)" stroke="#8A5530" stroke-width="1"/>
+  <path d="M24 15.5V34M20.3 15.5L19.4 34M27.7 15.5l.9 18.5" stroke="#8A5530" stroke-width=".8" opacity=".75"/>
+  <path d="M24 20.5c2.2 2.8 2.7 5.3 0 8.2-2.7-2.9-2.2-5.4 0-8.2z" fill="#FFFBEA"/>
+  <rect x="13.8" y="33.6" width="20.4" height="3.2" rx="1" fill="#8A5530"/>
+  <path d="M18 36.8h12l-2 4.4h-8z" fill="url(#lM)"/>`,
+ /* كتاب مفتوح */
+ book:`<defs><linearGradient id="bP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6E2"/><stop offset="1" stop-color="#EBCF9E"/></linearGradient></defs>
+  <path d="M6 12c6-2.5 12-2.5 18 1v26c-6-3.5-12-3.5-18-1z" fill="url(#bP)" stroke="#9A6236" stroke-width="1"/>
+  <path d="M42 12c-6-2.5-12-2.5-18 1v26c6-3.5 12-3.5 18-1z" fill="url(#bP)" stroke="#9A6236" stroke-width="1"/>
+  <path d="M10 18c3.5-1 7-1 10 .6M10 23c3.5-1 7-1 10 .6M28 18.6c3-1.6 6.5-1.6 10-.6M28 23.6c3-1.6 6.5-1.6 10-.6" stroke="#C08A55" stroke-width="1" stroke-linecap="round"/>
+  <path d="M6 38c6-2 12-2 18 1 6-3 12-3 18-1v3c-6-2-12-2-18 1-6-3-12-3-18-1z" fill="#8A5530"/>`
 };
-const svg = k => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[k]||ICONS.book)+'</svg>';
-const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>';
+const svg = k => '<svg viewBox="0 0 48 48" aria-hidden="true">'+(ICONS[k]||ICONS.book)+'</svg>';
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 const list = document.getElementById('sites');
@@ -113,12 +144,12 @@ list.innerHTML = SITES.map(s => `
   ${s.img ? `<span class="thumb"><img src="${esc(s.img)}" alt="" loading="lazy" decoding="async"></span>` : ''}
   <span class="body">
    <span class="top"><span class="ico">${svg(s.icon)}</span><h2>${esc(s.title)}</h2></span>
-   <p>${esc(s.desc)}</p>
+   <span class="lines"><span class="l1">${esc(s.lines[0])}</span>${s.lines[1] ? `<span class="l2">${esc(s.lines[1])}</span>` : ''}</span>
    <span class="go">ادخل الموقع ${arrow}</span>
   </span>
  </a></li>`).join('') + `
  <li><div class="site soon" aria-label="مواقع قادمة بإذن الله">
-  <span class="body"><span class="ico">${svg('soon')}</span><h2>مواقع قادمة بإذن الله</h2></span>
+  <span class="body"><span class="ico">${svg('lantern')}</span><h2>مواقع قادمة بإذن الله</h2></span>
  </div></li>`;
 </script>
 </body>
