@@ -176,7 +176,7 @@ document.getElementById('soon').innerHTML = `
  </div></li>`;
 
 /* مكتبة الزاد: لإضافة كتاب سطر واحد هنا ومجلد في kutub */
-const BOOKS = [{"slug": "jumua", "title": "رسالة من القلب", "pages": 13}, {"slug": "uhibbuka", "title": "والله إني لأحبك لله", "pages": 13}, {"slug": "muqarana", "title": "لا تجعلي المقارنة تهدم بيتك", "pages": 17}, {"slug": "banat", "title": "البنات هبة ورحمة", "pages": 13}, {"slug": "ab", "title": "كان يملأ البيت بحضوره", "pages": 13}, {"slug": "mutaqaid", "title": "تقاعدت عن الوظيفة لا عن العطاء", "pages": 16}];
+const BOOKS = [{"slug": "jumua", "title": "رسالة من القلب", "pages": 13}, {"slug": "uhibbuka", "title": "والله إني لأحبك لله", "pages": 13}, {"slug": "muqarana", "title": "لا تجعلي المقارنة تهدم بيتك", "pages": 17}, {"slug": "mustashar", "title": "احذر ممن يشير عليك بهدم بيتك", "pages": 21}, {"slug": "banat", "title": "البنات هبة ورحمة", "pages": 13}, {"slug": "ab", "title": "كان يملأ البيت بحضوره", "pages": 13}, {"slug": "mutaqaid", "title": "تقاعدت عن الوظيفة لا عن العطاء", "pages": 16}];
 document.getElementById('shelf').innerHTML = BOOKS.map(b => `
  <li><a class="book" href="kutub/${b.slug}/">
   <span class="cv"><img src="kutub/${b.slug}/cover.webp" alt="غلاف ${esc(b.title)}" width="420" height="747" loading="lazy" decoding="async"></span>
