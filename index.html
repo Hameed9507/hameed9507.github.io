@@ -61,6 +61,23 @@ a.site:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .site.soon .ico{background:color-mix(in srgb,#E9A64B 12%,transparent)}
 .site.soon h2{font-size:26px;color:var(--soft)}
 
+/* library shelf */
+.lib{margin:34px 0 6px}
+.lib-head{text-align:center;margin-bottom:14px}
+.lib-head h2{font:700 clamp(34px,9.6vw,44px)/1.35 Amiri,serif;margin:0}
+.lib-head p{margin:2px 0 0;font-weight:700;font-size:clamp(15.5px,4.4vw,18px);color:var(--soft)}
+.shelf{list-style:none;margin:0 calc(-1*max(5vw,16px));padding:6px max(5vw,16px) 18px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(5vw,16px);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.shelf::-webkit-scrollbar{display:none}
+.shelf li{flex:none;width:clamp(128px,36vw,150px);scroll-snap-align:start}
+.book{display:block;text-decoration:none;color:inherit}
+.book .cv{display:block;aspect-ratio:9/16;border-radius:12px 6px 6px 12px;overflow:hidden;background:var(--bg2);box-shadow:0 10px 22px rgba(60,30,10,.18),inset -3px 0 0 rgba(0,0,0,.08);transition:transform .2s}
+.book .cv img{width:100%;height:100%;object-fit:cover;display:block}
+a.book:hover .cv{transform:translateY(-3px)}
+a.book:focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:12px}
+.book b{display:block;margin-top:10px;font-weight:700;font-size:15.5px;line-height:1.5}
+.book small{display:block;font-weight:500;font-size:13.5px;color:var(--soft)}
+.soonlist{list-style:none;margin:22px 0 0;padding:0}
+
 /* footer */
 footer{text-align:center;padding:36px 16px 44px}
 .credit{font:700 30px/1.6 Amiri,serif;margin:0 auto;display:table;padding:0 6px;background:linear-gradient(90deg,light-dark(#C4512A,#F2A27A),light-dark(#C98A12,#F3CF72));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
@@ -83,6 +100,11 @@ footer{text-align:center;padding:36px 16px 44px}
 
 <main>
  <ul class="sites" id="sites"></ul>
+ <section class="lib" aria-labelledby="lib-t">
+  <div class="lib-head"><h2 id="lib-t">مكتبة الزاد</h2><p>رسائل قصيرة تهم كل مسلم ومسلمة</p></div>
+  <ul class="shelf" id="shelf"></ul>
+ </section>
+ <ul class="soonlist" id="soon"></ul>
 </main>
 </div>
 
@@ -146,10 +168,20 @@ list.innerHTML = SITES.map(s => `
    <span class="lines"><span class="l1">${esc(s.lines[0])}</span>${s.lines[1] ? `<span class="l2">${esc(s.lines[1])}</span>` : ''}</span>
    <span class="go">ادخل الموقع ${arrow}</span>
   </span>
- </a></li>`).join('') + `
+ </a></li>`).join('');
+
+document.getElementById('soon').innerHTML = `
  <li><div class="site soon" aria-label="مواقع قادمة بإذن الله">
   <span class="body"><span class="ico">${svg('lantern')}</span><h2>مواقع قادمة بإذن الله</h2></span>
  </div></li>`;
+
+/* مكتبة الزاد: لإضافة كتاب سطر واحد هنا ومجلد في kutub */
+const BOOKS = [{"slug": "jumua", "title": "رسالة من القلب", "pages": 13}, {"slug": "uhibbuka", "title": "والله إني لأحبك لله", "pages": 13}, {"slug": "muqarana", "title": "لا تجعلي المقارنة تهدم بيتك", "pages": 17}, {"slug": "banat", "title": "البنات هبة ورحمة", "pages": 13}, {"slug": "ab", "title": "كان يملأ البيت بحضوره", "pages": 13}, {"slug": "mutaqaid", "title": "تقاعدت عن الوظيفة لا عن العطاء", "pages": 16}];
+document.getElementById('shelf').innerHTML = BOOKS.map(b => `
+ <li><a class="book" href="kutub/${b.slug}/">
+  <span class="cv"><img src="kutub/${b.slug}/cover.webp" alt="غلاف ${esc(b.title)}" width="420" height="747" loading="lazy" decoding="async"></span>
+  <b>${esc(b.title)}</b><small>${b.pages} صفحة</small>
+ </a></li>`).join('');
 </script>
 </body>
 </html>
